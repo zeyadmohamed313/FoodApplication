@@ -1,0 +1,91 @@
+﻿@model OrderRecipeDetails
+
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12">
+			<img src="@Model.Image_url" class="w-100" id="order-img" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6 col-md-6 col-lg-6 col-6-xl">
+
+			<h2 class="text-dark">@Model.Title</h2>
+		</div>
+		
+	</div>
+	<div class="row">
+		<div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+			
+					<div class="table-responsive p-2">
+					<table class="table-bordered">
+						<thead>
+							<tr>
+								<th>Descreption</th>
+								<th>Quanity</th>
+								<th>Unit</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							@foreach(var ing in Model.Ingredients)
+							{
+								<tr>
+									<td>
+										@ing.Description 
+									</td>
+									<td>
+										@ing.Quantity
+									</td>
+									<td>
+										@ing.unit
+									</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div> 
+		   
+		</div>
+		<div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+		  <form autocomplete="off" method="post">
+				<input type="hidden" value="@Model.Id" name="RecipeId" />
+				<input type="hidden" value="@Model.Title" name="RecipeName" />
+				<input type="hidden" value="@ViewBag.userId" name="UserID" />
+				<input type="hidden" value="@ViewBag.price" name="price" />
+				<div class="p-2">
+					<h2 class="text-dark">Bill Details.</h2>
+					<div class="row border-bottom border-2 border-dark text-muted">
+						<label class="col-10 col-form-label">Price</label>
+						<div class="col-2">
+							<span><i class="fa-solid fa-indian-rupee-sign"></i></span>
+							<span class="text-muted fw-bold fst">@ViewBag.price</span>						 
+							<span></span>
+						</div>
+					</div>
+					<div class="row border-bottom border-2 border-dark" id="qtySection">
+						<label class="col-9 col-form-label text-muted">Quantity</label>
+						<div class="col-3 border border-2 border-success text-center rounded">
+							<span><i class="fa-solid fa-plus text-success"></i></span>
+							<input type="text" id="qty" class="bg-white text-success fw-bold" value="1" name="Quantity" />
+							<span><i class="fa-solid fa-minus text-success"></i></span>
+						</div>
+					</div>
+					<div class="row border-bottom border-2 border-dark">
+						<label class="col-10 col-form-labeltext-muted">Delivery Charge.</label>
+						<label class="col-10 col-form-label text-success fw-bold">Free</label>
+					</div>
+					<div class="px-1 p-3">
+						<label class="form-label text-muted">Delivery Address</label>
+						<textarea class="form-control" name="Address">@ViewBag.Address</textarea>
+					</div>
+					<div class="row border-top border-dark border-1">
+						<label class ="col-10 col-form-label">Total</label>
+						<span><i class="fa-solid fa-indian-rupee-sign"></i>@ViewBag.price</span>
+					</div>
+					<button type="submit" class="btn btn-sm btn-success p-2 shadow rounded">Order</button>
+				</div>
+			</form>
+		</div>
+    </div>
+</div>

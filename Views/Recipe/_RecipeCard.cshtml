@@ -1,0 +1,18 @@
+﻿@model List<Recipe>
+@{
+    @foreach (var it in Model)
+    {
+        <div class="col-4-sm col-md-4 col-4 col-4-xl mb-3">
+            <div class="shadow rounded p-2">
+                <div class="card dashcard">
+                    <img src="@it.Image_url" class="card-img-top fixed-image-size" alt="item">
+                    <div class="card-body">
+                        <div class="card-title fw-bold fs-6 text-pink">@it.Title</div>
+                        <div class="card-text fst-italic">@it.publisher</div>
+                        <a href="/Recipe/Order?id=@it.id" class="btn btn-sm btn-dark">Order</a>
+					</div>
+				</div>
+            </div>
+        </div>
+    }
+}

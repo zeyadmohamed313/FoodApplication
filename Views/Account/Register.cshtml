@@ -1,0 +1,40 @@
+﻿@model RegisterViewModel
+@{
+	ViewData["Title"] = "Register";
+}
+<div class="container shadow rounded">
+	<div class="row">
+		<div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+			<img src="/Images/4.jpg" class="register w-100 h-100" alt="icon" />
+		</div>
+	
+	<div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+		<form autocomplete="off" method="post" class="p-3 m-1"action="/Account/Register">
+			<div class="p-2">
+				<h2 class="fst-italic text-danger fw-bold">Register</h2>
+				<small class="fst-italic mt-1 text-muted fw-bold p-1">Create your account</small>
+			</div>
+			<div class="mb-3 validation-summary">@Html.ValidationSummary()</div>
+			<div class="form-floating mb-3">
+				@Html.TextBoxFor(m=>m.Name , new{@class="form-control",placeholder="Name"})
+				<label class="form-label" for="Name">Name</label>
+			</div>
+			<div class="form-floating mb-3">
+				@Html.TextBoxFor(m=>m.Address, new{@class="form-control",placeholder="Address"})
+				<label class="form-label" for="Address">Address</label>
+			</div>
+			<div class="form-floating mb-3">
+				@Html.TextBoxFor(m=>m.Email , new{@class="form-control",placeholder="Email"})
+				<label class="form-label" for="Email">Email</label>
+			</div>
+			<div class="form-floating mb-3">
+				@Html.TextBoxFor(m=>m.Password, new{@class="form-control",type="password",placeholder="Password"})
+				<label class="form-label" for="Password">Password</label>
+			</div>
+			<div class="mb-3">
+				<button class="btn btn-sm btn-dark w-100 p-2 fst-italic shadow rounded">Register</button>
+			</div>
+		</form>
+	</div>
+	</div>
+</div>

@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "_searchBar";
+}
+<div class="shadow rounded">
+    <div class="p-2">
+        <form autocomplete="off">
+            <div class="mb-3 row">
+                <div class="col-11 text-center ui-widget mt-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i><i class="fa-solid fa-magnifying-glass text-black"></i></i></span>
+                        </div>
+                        <input type="text" id="tags" placeholder="SearchBar" name="recipe" class="form-control" />
+                    </div>
+
+                </div>
+                <div class="col-1 mt-2">
+                    <button type="submit" class="btn btn-sm  btn-outline-success p-2">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    $(function () {
+        var availableTags = [
+            "Pizza", "Hamburger", "Chicken", "Cake", "Kebab", "Meat", "Fruits", "Coffe", "Tea", "Fried Potatos",
+            "Sandwichs", "Pickels", "Dessert", "Yogurt", "Kofta", "Bean", "Butter", "Hotdog", "Fish", "Cheese"
+        ];
+        $("#tags").autocomplete({
+            source: availableTags
+        });
+    });
+</script>

@@ -1,0 +1,41 @@
+﻿@model LoginViewModel
+@{
+	ViewData["Tilte"] = "Login";
+}
+<div class="container shadow rounded">
+	<div class="row">
+		<div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+			<img src="/Images/123.jpg"class="h-100 w-100" alt="icon" />
+		</div>
+		<div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+			<form autocomplete="off" method="post" class="p-3 m-3" action="/Account/Login">
+				<div class="p-5">
+					<h2 class="fst-italic text-danger fw-bold">Login</h2>
+					<small class="fst-italic mt-1 text-muted fw-bold">Log into your account</small>
+				</div>
+				<div class="mb-3 validation-summary">
+					@Html.ValidationSummary()
+				</div>
+					<div class="form-floating mb-3">
+						@Html.TextBoxFor(m=>m.Email , new{@class="form-control",placeholder="Email"})
+						<label class="form-label" for="Email">Email</label>
+					</div>
+					<div class="form-floating mb-3">
+						@Html.TextBoxFor(m=>m.Password, new{@class="form-control",type="password",placeholder="Password"})
+						<label class="form-label" for="Password">Password</label>
+					</div>
+					<div class="mb-3">
+						<button class="btn btn-sm btn-dark w-100 p-2 shadow rounded fst-italic">Login</button>
+					</div>
+				<span class="text-muted">
+					Do not have account ? <a class=" text-decoration-none fst-italic text-pink"
+					asp-controller="Account"asp-action="Register">Register Now</a>
+				</span>
+			</form>
+			
+		</div>
+	</div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js">
+
+</script>

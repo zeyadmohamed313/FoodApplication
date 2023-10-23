@@ -1,0 +1,90 @@
+﻿@{
+	ViewData["Title"] = "Recipe";
+}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12 mb-4">
+			@Html.Partial("_SearchBar")
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-2">
+			<div class="shadow rounded">
+				<div class="border-bottom border-3 p-2">
+					<h4 class="text-pink text-center fst-italic">Recipe</h4>
+					@Html.Partial("_Sidemenu")
+				</div>
+			</div>
+		</div>
+		<div class="col-10">
+			<div class="mb-3">
+				<h4 class="text-dark mb-3">Pizza</h4>
+				<div class="row" id="pizzarecipe"></div>
+			</div>
+			<div class="mb-3">
+				<h4 class="text-dark mb-3">cake</h4>
+				<div class="row" id="cakerecipe"></div>
+			</div>
+			<div class="mb-3">
+				<h4 class="text-dark mb-3">Hamburger</h4>
+				<div class="row" id="hamburger"></div>
+			</div>
+			<div class="mb-3">
+				<h4 class="text-dark mb-3">Chicken</h4>
+				<div class="row" id="chicken"></div>
+			</div>
+			<div class="mb-3">
+				<h4 class="text-dark mb-3">Coffee</h4>
+				<div class="row" id="coffee"></div>
+			</div>
+			<div class="mb-3">
+				<h4 class="text-dark mb-3">Tea</h4>
+				<div class="row" id="tea"></div>
+			</div>
+			<div class="mb-3">
+				<h4 class="text-dark mb-3">Sandwich</h4>
+				<div class="row" id="sandwich"></div>
+			</div>
+			<div class="mb-3">
+				<h4 class="text-dark mb-3">Kebab</h4>
+				<div class="row" id="kebab"></div>
+			</div>
+			<div class="mb-3">
+				<h4 class="text-dark mb-3">Fries</h4>
+				<div class="row" id="fries"></div>
+			</div>
+			<div class="mb-3">
+				<h4 class="text-dark mb-3">Cheese</h4>
+				<div class="row" id="cheese"></div>
+			</div>
+			<div class="mb-3">
+				<h4 class="text-dark mb-3">Fruit</h4>
+				<div class="row" id="fruit"></div>
+			</div>
+			<div class="mb-3">
+				<h4 class="text-dark mb-3">Fish</h4>
+				<div class="row" id="fish"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		GetRecipes("Pizza", "pizzarecipe", false);
+		GetRecipes("cake", "cakerecipe", false);
+		GetRecipes("hamburger", "hamburger", false);
+		GetRecipes("chicken", "chicken", false);
+		GetRecipes("coffee", "coffee", false);
+		GetRecipes("sandwich", "sandwich", false);
+		GetRecipes("kebab", "kebab", false);
+		GetRecipes("fries", "fries", false);
+		GetRecipes("tea", "tea", false);
+		GetRecipes("cheese", "cheese", false);
+		GetRecipes("fish", "fish", false);
+		GetRecipes("fruit", "fruit", false);
+
+
+
+	});
+</script>
